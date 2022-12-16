@@ -2,7 +2,7 @@
 
 /**
  * print_square - a function that prints a square, followed by a new line
- * @size: size of both width and lengt
+ * @size: size of both width and length
  * Return: a square made of '#'
  */
 void print_square(int size)
@@ -20,7 +20,7 @@ void print_square(int size)
 			_putchar('#');
 			for (ro = 2; ro <= size; ro++)
 			{
-				putchar('#');
+				_putchar('#');
 			}
 			_putchar('\n');
 		}
