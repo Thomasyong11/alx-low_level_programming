@@ -1,39 +1,19 @@
-# 0x07. C - Even more pointers, arrays and strings
+# Even more pointers, arrays and strings
 
-## Description
-What you should learn from this project:
+Project done during **Full Stack Software Engineering studies** at **ALX**. It aims to learn about pointers and arrays in **C language**.
 
-* What are pointers to pointers and how to use them
-* What are multidimensional arrays and how to use them
-* What are the most common C standard library functions to manipulate strings
+## Files
+All of the following files are programs written in C:
 
----
-
-### [0. memset](./0-memset.c)
-* Write a function that fills memory with a constant byte.
-
-### [1. memcpy ](./1-memcpy.c)
-* Write a function that copies memory area.
-
-### [2. strchr](./2-strchr.c)
-* Write a function that locates a character in a string.
-
-### [3. strspn](./3-strspn.c)
-* Write a function that gets the length of a prefix substring.
-
-### [4. strpbrk ](./4-strpbrk.c)
-* Write a function that searches a string for any of a set of bytes.
-
-### [5. strstr](./5-strstr.c)
-* Write a function that locates a substring.
-
-### [6. Chess is mental torture](./7-print_chessboard.c)
-* Write a function that prints the chessboard.
-
-### [7. The line of life is a ragged diagonal between duty and desire](./8-print_diagsums.c)
-* Write a function that prints the sum of the two diagonals of a square matrix of integers.
-
-### [8. Double pointer, double fun](./9-set_string.c)
-* Write a function that sets the value of a pointer to a char.
-
----
+| Filename | Description |
+| -------- | ----------- |
+| `0-memset.c` | Fills memory with a constant byte |
+| `1-memcpy.c` | Copies memory area |
+| `2-strchr.c` | Locates a character in a string |
+| `3-strspn.c` | Gets the length of a prefix substring |
+| `4-strpbrk.c` | Searches a string for any of a set of bytes |
+| `5-strstr.c` | Locates a substring |
+| `7-print_chessboard.c` | Prints the chessboard |
+| `8-print_diagsums.c` | Prints the sum of the two diagonals of a square matrix of integers |
+| `9-set_string.c` | Sets the value of a pointer to a char |
+| `101-crackme_password.c` | Contains the password for the `crackme2` executable |
