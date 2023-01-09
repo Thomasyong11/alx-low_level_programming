@@ -1,23 +1,55 @@
-#include "main.h"
+nclude "main.h"
 
 /**
- * _strncpy - copy two strings only taking n bytes from src
- * @dest: first string to be added to
- * @src: second string to be added
- * @n: number of bites to use from src
- * Return: concatenated string
- */
+ *
+ *  * _strncpy - copy a string
+ *
+ *   * @dest: input value
+ *
+ *    * @src: input value
+ *
+ *     * @n: input value
+ *
+ *      *
+ *
+ *       * Return: dest
+ *
+ *        */
 
 char *_strncpy(char *dest, char *src, int n)
-{
-	char *temp = dest;
 
-	for (; n != 0 && *src != '\0'; n--, src++)
-	{
-		*temp = *src;
-		temp++;
-	}
-	for (; n != 0 && *temp != '\0'; n--, temp++)
-		*temp = '\0';
-	return (dest);
+{
+
+		int j;
+
+
+
+			j = 0;
+
+				while (j < n && src[j] != '\0')
+
+						{
+
+									dest[j] = src[j];
+
+											j++;
+
+												}
+
+					while (j < n)
+
+							{
+
+										dest[j] = '\0';
+
+												j++;
+
+													}
+
+
+
+						return (dest);
+
 }
+
+`
