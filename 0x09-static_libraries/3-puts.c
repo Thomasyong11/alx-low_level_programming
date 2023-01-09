@@ -1,37 +1,19 @@
-nclude "holberton.h"
-
-
-
+include "main.h"
 /**
- *
- *  * _islower - checks if input is lowercase
- *
- *   * @c: variable to determine if input is lowercase
- *
- *    * main - uses built in function
- *
- *     * Return: 0 if succesful
- *
- *      */
+ * _puts - print a string
+ * @str: string
+ */
 
-
-
-int _islower(int c)
-
+void _puts(char *str)
 {
-
 	int i;
 
 	i = 0;
 
-	if (c >= 'a' && c <= 'z')
-
+	while (str[i] != '\0')
 	{
-
-		i = 1;
-
+		_putchar(str[i]);
+		i++;
 	}
-
-	return (i);
-
+	_putchar('\n');
 }
