@@ -1,14 +1,12 @@
 #include "main.h"
 
 /**
- * _strncat - concatenates two strings only taking n bytes from src
+ *_strcat - concatenates two strings
  * @dest: first string to be added to
  * @src: second string to be added
- * @n: number of bites to use from src
  * Return: concatenated string
  */
-
-char *_strncat(char *dest, char *src, int n)
+char *_strcat(char *dest, char *src)
 {
 	char *temp = dest;
 
@@ -16,11 +14,9 @@ char *_strncat(char *dest, char *src, int n)
 		;
 	for (; *src != '\0'; src++)
 	{
-		if (n == 0)
-			break;
 		*temp = *src;
 		temp++;
-		n--;
 	}
+	*temp = *src;
 	return (dest);
 }
