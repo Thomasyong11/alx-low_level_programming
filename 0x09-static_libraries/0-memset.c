@@ -2,6 +2,7 @@
 /**
  * _memset - fill a block of memory with a specific value
  * _memset - fill a block of memory with a specific value
+ * @s: start point of string to change
  * @b: the desired value
  *  @n: number of bytes to be changed
  *  Return: changed array with new value for n bytes
