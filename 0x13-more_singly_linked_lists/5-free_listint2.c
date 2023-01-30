@@ -1,39 +1,24 @@
-nclude "lists.h"
-
-
+#include "lists.h"
 
 /**
+ * free_listint2 - frees a linked list
+ * @head: head of a list.
  *
- *  * print_listint - prints all the elements of a list.
- *
- *   * @h: head of a list.
- *
- *    *
- *
- *     * Return: numbers of nodes.
- *
- *      */
-
-size_t print_listint(const listint_t *h)
-
+ * Return: no return.
+ */
+void free_listint2(listint_t **head)
 {
+	listint_t *temp;
+	listint_t *curr;
 
-		size_t nnodes = 0;
-
-
-
-			while (h != NULL)
-
-					{
-
-								printf("%d\n", h->n);
-
-										h = h->next;
-
-												nnodes++;
-
-													}
-
-				return (nnodes);
-
+	if (head != NULL)
+	{
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
+	}
 }
