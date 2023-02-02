@@ -1,73 +1,22 @@
-#include "holberton.h"
-
-
+#include "main.h"
 
 /**
+ * flip_bits - returns the number of bits you would
+ * need to flip to get from one number to another
+ * @n: number one.
+ * @m: number two.
  *
- *  * binary_to_uint - converts a binary number to an
- *
- *   * unsigned int.
- *
- *    * @b: binary.
- *
- *     *
- *
- *      * Return: unsigned int.
- *
- *       */
-
-unsigned int binary_to_uint(const char *b)
-
+ * Return: number of bits.
+ */
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
+	unsigned int nbits;
 
-		unsigned int ui;
+	for (nbits = 0; n || m; n >>= 1, m >>= 1)
+	{
+		if ((n & 1) != (m & 1))
+			nbits++;
+	}
 
-			int len, base_two;
-
-
-
-				if (!b)
-
-							return (0);
-
-
-
-					ui = 0;
-
-
-
-						for (len = 0; b[len] != '\0'; len++)
-
-									;
-
-
-
-							for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
-
-									{
-
-												if (b[len] != '0' && b[len] != '1')
-
-															{
-
-																			return (0);
-
-																					}
-
-
-
-														if (b[len] & 1)
-
-																	{
-
-																					ui += base_two;
-
-																							}
-
-															}
-
-
-
-								return (ui);
-
+	return (nbits);
 }
