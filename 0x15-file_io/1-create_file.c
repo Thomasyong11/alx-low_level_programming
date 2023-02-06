@@ -1,71 +1,38 @@
-#include "holberton.h"
-
-
+#include "main.h"
 
 /**
+ * create_file - creates a file
+ * @filename: filename.
+ * @text_content: content writed in the file.
  *
- *  * read_textfile - reads a text file and prints the letters
- *
- *   * @filename: filename.
- *
- *    * @letters: numbers of letters printed.
- *
- *     *
- *
- *      * Return: numbers of letters printed. It fails, returns 0.
- *
- *       */
-
-ssize_t read_textfile(const char *filename, size_t letters)
-
+ * Return: 1 if it success. -1 if it fails.
+ */
+int create_file(const char *filename, char *text_content)
 {
+	int fd;
+	int nletters;
+	int rwr;
 
-		int fd;
+	if (!filename)
+		return (-1);
 
-			ssize_t nrd, nwr;
+	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
-				char *buf;
+	if (fd == -1)
+		return (-1);
 
+	if (!text_content)
+		text_content = "";
 
+	for (nletters = 0; text_content[nletters]; nletters++)
+		;
 
-					if (!filename)
+	rwr = write(fd, text_content, nletters);
 
-								return (0);
+	if (rwr == -1)
+		return (-1);
 
+	close(fd);
 
-
-						fd = open(filename, O_RDONLY);
-
-
-
-							if (fd == -1)
-
-										return (0);
-
-
-
-								buf = malloc(sizeof(char) * (letters));
-
-									if (!buf)
-
-												return (0);
-
-
-
-										nrd = read(fd, buf, letters);
-
-											nwr = write(STDOUT_FILENO, buf, nrd);
-
-
-
-												close(fd);
-
-
-
-													free(buf);
-
-
-
-														return (nwr);
-
+	return (1);
 }
