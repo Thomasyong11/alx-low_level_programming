@@ -1,71 +1,39 @@
-#include "holberton.h"
-
-
+#include "main.h"
 
 /**
+ * append_text_to_file - appends text at the end of a file
+ * @filename: filename.
+ * @text_content: added content.
  *
- *  * read_textfile - reads a text file and prints the letters
- *
- *   * @filename: filename.
- *
- *    * @letters: numbers of letters printed.
- *
- *     *
- *
- *      * Return: numbers of letters printed. It fails, returns 0.
- *
- *       */
-
-ssize_t read_textfile(const char *filename, size_t letters)
-
+ * Return: 1 if the file exists. -1 if the fails does not exist
+ * or if it fails.
+ */
+int append_text_to_file(const char *filename, char *text_content)
 {
+	int fd;
+	int nletters;
+	int rwr;
 
-		int fd;
+	if (!filename)
+		return (-1);
 
-			ssize_t nrd, nwr;
+	fd = open(filename, O_WRONLY | O_APPEND);
 
-				char *buf;
+	if (fd == -1)
+		return (-1);
 
+	if (text_content)
+	{
+		for (nletters = 0; text_content[nletters]; nletters++)
+			;
 
+		rwr = write(fd, text_content, nletters);
 
-					if (!filename)
+		if (rwr == -1)
+			return (-1);
+	}
 
-								return (0);
+	close(fd);
 
-
-
-						fd = open(filename, O_RDONLY);
-
-
-
-							if (fd == -1)
-
-										return (0);
-
-
-
-								buf = malloc(sizeof(char) * (letters));
-
-									if (!buf)
-
-												return (0);
-
-
-
-										nrd = read(fd, buf, letters);
-
-											nwr = write(STDOUT_FILENO, buf, nrd);
-
-
-
-												close(fd);
-
-
-
-													free(buf);
-
-
-
-														return (nwr);
-
+	return (1);
 }
